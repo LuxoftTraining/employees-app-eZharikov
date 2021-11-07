@@ -2,12 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="employees-json.js"></script>
     <script src="service.js"></script>
+    <script src="ui.js"></script>
 
-    <title>Title</title>
+    <title>Employee App</title>
 </head>
 <body>
 
+
+    <div class="tab">
+        <button id="searchButton" class="tablinks"
+                onclick="openTab(event, 'searchPane')">Поиск сотрудника</button>
+        <button class="tablinks"
+                onclick="openTab(event, 'addPane')">Добавление сотрудника</button>
+    </div>
+
+    <!--форма добавления сотрудника-->
+    <div id="addPane" class="tabcontent">
+        <h3>Добавление сотрудника</h3>
+        <label for="name">Имя:</label>
+        <input id="name" placeholder="Имя">
+
+        <label for="surname">Фамилия:</label>
+        <input id="surname" placeholder="Фамилия">
+
+        <label for="managerSelect">Менеджер:</label>
+        <select id="managerSelect"></select >
+        <div id="addEmployeeFormErrorMessage"></div>
+
+        <p>
+            <button onclick="addEmployeeUI()" id="addEmployeeButton">
+                Добавить сотрудника</button>
+        </p>
+    </div>
+
+
+    <!--форма поиска сотрудника-->
+    <div id="searchPane" class="tabcontent">
+        <h3>Поиск сотрудника</h3>
+        <form>
+            <input id="nameSearch" placeholder="Имя" size="30">
+            <input id="surnameSearch" placeholder="Фамилия" size="30">
+
+            Поиск по менеджеру:
+            <select id="managerSearch"></select>
+
+            <p>
+                <button type=button onclick="searchEmployeeUI()"
+                        id="searchEmployeesButton">Найти сотрудников</button>
+
+                <input type="reset" value="Сбросить форму">
+            </p>
+        </form>
+
+        <div id="employeesPlaceholder"></div>
+
+    </div>
+
+
 </body>
+<script>
+    runUI();
+</script>
+
 </html>
