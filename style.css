@@ -14,7 +14,7 @@ button,input,select {
     background-color: #f1f1f1;
 }
 
-/* Стиль кнопок, использующийся для открытия контента */
+/* Style the buttons that are used to open the tab content */
 .tab button {
     background-color: inherit;
     border: none;
@@ -26,17 +26,17 @@ button,input,select {
     margin: 0px;
 }
 
-/* Измненение фона таба при наведении мышкой */
+/* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #ddd;
 }
 
-/* Создаем класс для активного таба */
+/* Create an active/current tablink class */
 .tab button.active {
     background-color: #fff;
 }
 
-/* Стиль для содержания таба */
+/* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
